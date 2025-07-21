@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: cnnClassifier
+Version: 0.0.0
+Summary: A small python package for CNN app
+Home-page: https://github.com/jagannath-nayak/Kidney-Disease-Classification-MLflow-DVC
+Author: jagannath-nayak
+Author-email: jagannath08108nayak@gmail.com
+Project-URL: Bug Tracker, https://github.com/jagannath-nayak/Kidney-Disease-Classification-MLflow-DVC/issues
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: summary
+
+# Kidney-Disease-Classification-MLflow-DVC
