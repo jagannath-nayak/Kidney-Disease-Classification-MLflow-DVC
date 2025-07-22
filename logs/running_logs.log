@@ -15,3 +15,39 @@
 [2025-07-22 17:41:56,078: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2025-07-22 18:20:38,322: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-22 18:20:38,373: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-22 18:20:38,389: INFO: common: created directory at: artifacts]
+[2025-07-22 18:20:38,395: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-07-22 18:20:53,855: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-07-22 18:22:00,133: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-07-22 18:22:00,136: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-22 18:22:00,136: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-22 18:22:00,143: INFO: common: created directory at: artifacts]
+[2025-07-22 18:22:00,144: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-07-22 18:22:00,145: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-22 18:22:14,524: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-22 18:22:16,695: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-07-22 18:37:03,849: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-07-22 18:37:03,851: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-22 18:37:03,851: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-22 18:37:03,864: INFO: common: created directory at: artifacts]
+[2025-07-22 18:37:03,864: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-07-22 18:37:03,868: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-22 18:37:18,605: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-22 18:37:20,734: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-07-22 18:37:20,734: INFO: main: *******************]
+[2025-07-22 18:37:20,734: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-07-22 18:37:20,754: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-22 18:37:20,767: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-22 18:37:20,776: INFO: common: created directory at: artifacts]
+[2025-07-22 18:37:20,784: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-07-22 18:37:22,681: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-07-22 18:37:23,349: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-07-22 18:37:24,168: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
