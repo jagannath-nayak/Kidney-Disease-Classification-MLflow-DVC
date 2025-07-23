@@ -51,7 +51,6 @@ class PrepareBaseModel:
         full_model.summary()
         return full_model
     
-    
     def update_base_model(self):
         self.full_model = self._prepare_full_model(
             model=self.model,
@@ -63,8 +62,7 @@ class PrepareBaseModel:
 
         self.save_model(path=self.config.updated_base_model_path, model=self.full_model)
 
-    
         
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
-        model.save(path)
+        model.save(path)  # Automatically uses SavedModel format if no `.h5` extension
