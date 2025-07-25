@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Classification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f7f9fc;
+            padding-top: 40px;
+        }
+        .preview-img {
+            max-width: 100%;
+            max-height: 300px;
+            margin-top: 20px;
+        }
+        .result-box {
+            margin-top: 30px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .loading {
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container text-center">
+    <h1 class="mb-4">Image Classification</h1>
+
+    <div class="form-group">
+        <input type="file" id="imageInput" class="form-control-file">
+        <img id="preview" class="preview-img" style="display:none;" />
+    </div>
+
+    <button id="predictBtn" class="btn btn-primary">Predict</button>
+
+    <div class="loading mt-3" id="loading">Loading...</div>
+
+    <div class="result-box mt-3" id="result" style="display:none;"></div>
+</div>
+
+<!-- jQuery + Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let base64Image = "";
+
+    $("#imageInput").change(function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                base64Image = e.target.result.split(',')[1];
+                $("#preview").attr("src", e.target.result).show();
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $("#predictBtn").click(function () {
+        if (!base64Image) {
+            alert("Please upload an image first.");
+            return;
+        }
+
+        $("#loading").show();
+        $("#result").hide().empty();
+
+        $.ajax({
+            url: "/predict", 
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ image: base64Image }),
+            success: function (response) {
+                $("#loading").hide();
+                $("#result").html("<pre>" + JSON.stringify(response, null, 2) + "</pre>").show();
+            },
+            error: function () {
+                $("#loading").hide();
+                $("#result").html("<p class='text-danger'>Error occurred while predicting.</p>").show();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -291,3 +291,177 @@ x==========x]
 [2025-07-25 15:02:50,872: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-07-25 15:20:40,915: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 15:20:40,917: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 15:21:15,858: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:21:15] "GET / HTTP/1.1" 200 -]
+[2025-07-25 15:26:04,837: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\asus\desktop\kidney-disease-classification-mlflow-dvc\src\cnnClassifier\pipeline\prediction.py", line 12, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-07-25 15:26:05,602: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:26:05] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-07-25 15:29:28,135: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 15:29:28,135: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 15:29:39,946: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:29:39] "GET / HTTP/1.1" 200 -]
+[2025-07-25 15:30:03,112: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\asus\desktop\kidney-disease-classification-mlflow-dvc\src\cnnClassifier\pipeline\prediction.py", line 12, in predict
+    model = load_model(os.path.join("artifacts\training\model.h5"))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts	raining\model.h5
+[2025-07-25 15:30:03,129: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:30:03] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-07-25 15:33:00,824: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:33:00] "GET / HTTP/1.1" 200 -]
+[2025-07-25 15:33:26,425: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\asus\desktop\kidney-disease-classification-mlflow-dvc\src\cnnClassifier\pipeline\prediction.py", line 12, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts	raining\model.h5
+[2025-07-25 15:33:26,440: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:33:26] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-07-25 15:34:09,379: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 15:34:09,383: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 15:34:19,305: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:34:19] "GET / HTTP/1.1" 200 -]
+[2025-07-25 15:34:29,854: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:34:29] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 15:34:55,771: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:34:55] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 15:43:26,581: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 15:43:26,582: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 15:43:34,458: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:43:34] "GET / HTTP/1.1" 200 -]
+[2025-07-25 15:43:34,921: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:43:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-07-25 15:43:54,161: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:43:54] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 15:44:26,102: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 15:44:26] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 15:55:22,543: INFO: stage_02_prepare_base_model: *******************]
+[2025-07-25 15:55:22,543: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-07-25 15:55:22,547: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 15:55:22,553: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 15:55:22,554: INFO: common: created directory at: artifacts]
+[2025-07-25 15:55:22,555: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-07-25 15:55:23,574: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-07-25 15:55:27,042: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2025-07-25 15:55:28,208: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model\assets]
+[2025-07-25 15:55:32,095: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2025-07-25 15:55:33,381: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model_updated\assets]
+[2025-07-25 15:55:33,490: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-07-25 15:56:30,802: INFO: stage_02_prepare_base_model: *******************]
+[2025-07-25 15:56:30,817: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-07-25 15:56:30,817: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 15:56:30,817: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 15:56:30,817: INFO: common: created directory at: artifacts]
+[2025-07-25 15:56:30,826: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-07-25 15:56:31,691: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-07-25 15:56:33,747: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2025-07-25 15:56:34,689: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model\assets]
+[2025-07-25 15:56:37,082: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2025-07-25 15:56:38,322: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model_updated\assets]
+[2025-07-25 15:56:38,456: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-07-25 15:56:50,394: INFO: stage_03_model_training: *******************]
+[2025-07-25 15:56:50,394: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-07-25 15:56:50,394: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 15:56:50,406: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 15:56:50,406: INFO: common: created directory at: artifacts]
+[2025-07-25 15:56:50,406: INFO: common: created directory at: artifacts\training]
+[2025-07-25 17:49:55,917: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-07-25 17:50:21,174: INFO: stage_04_model_evaluation: *******************]
+[2025-07-25 17:50:21,174: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-07-25 17:50:21,174: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 17:50:21,193: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 17:50:21,196: INFO: common: created directory at: artifacts]
+[2025-07-25 17:52:03,836: INFO: common: json file saved at: scores.json]
+[2025-07-25 17:52:03,838: INFO: common: json file saved at: scores.json]
+[2025-07-25 17:52:03,838: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2025-07-25 17:53:21,362: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 17:53:21,363: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 17:53:55,055: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 17:53:55] "GET / HTTP/1.1" 200 -]
+[2025-07-25 17:53:55,461: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 17:53:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-07-25 17:54:10,503: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 17:54:10] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 17:54:37,090: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 17:54:37] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 17:56:40,176: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 17:56:40] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 18:05:13,257: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.10:8080]
+[2025-07-25 18:05:13,257: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-07-25 18:05:18,413: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 18:05:18] "GET / HTTP/1.1" 200 -]
+[2025-07-25 18:05:32,870: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 18:05:32] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 18:05:56,292: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 18:05:56] "POST /predict HTTP/1.1" 200 -]
+[2025-07-25 18:07:47,656: INFO: _internal: 127.0.0.1 - - [25/Jul/2025 18:07:47] "POST /predict HTTP/1.1" 200 -]
