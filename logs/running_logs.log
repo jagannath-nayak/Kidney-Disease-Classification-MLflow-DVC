@@ -248,3 +248,46 @@ x==========x]
 [2025-07-24 18:34:07,569: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-07-25 14:47:13,477: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-07-25 14:47:13,477: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 14:47:13,494: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 14:47:13,496: INFO: common: created directory at: artifacts]
+[2025-07-25 14:47:13,500: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-07-25 14:47:13,500: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-25 14:47:28,327: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-25 14:47:29,707: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-07-25 14:48:01,369: INFO: stage_02_prepare_base_model: *******************]
+[2025-07-25 14:48:01,369: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-07-25 14:48:01,385: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 14:48:01,392: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 14:48:01,396: INFO: common: created directory at: artifacts]
+[2025-07-25 14:48:01,397: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-07-25 14:48:02,571: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-07-25 14:48:05,346: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2025-07-25 14:48:06,790: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model\assets]
+[2025-07-25 14:48:12,308: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2025-07-25 14:48:13,592: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\base_model_updated\assets]
+[2025-07-25 14:48:13,724: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-07-25 14:48:27,832: INFO: stage_03_model_training: *******************]
+[2025-07-25 14:48:27,832: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-07-25 14:48:27,832: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 14:48:27,832: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 14:48:27,847: INFO: common: created directory at: artifacts]
+[2025-07-25 14:48:27,850: INFO: common: created directory at: artifacts\training]
+[2025-07-25 15:00:39,389: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-07-25 15:01:02,127: INFO: stage_04_model_evaluation: *******************]
+[2025-07-25 15:01:02,127: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-07-25 15:01:02,139: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-25 15:01:02,149: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-25 15:01:02,151: INFO: common: created directory at: artifacts]
+[2025-07-25 15:02:50,868: INFO: common: json file saved at: scores.json]
+[2025-07-25 15:02:50,871: INFO: common: json file saved at: scores.json]
+[2025-07-25 15:02:50,872: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
