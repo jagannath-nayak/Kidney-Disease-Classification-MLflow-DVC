@@ -473,3 +473,30 @@ x==========x]
 [2025-07-26 12:18:05,403: INFO: _internal: 127.0.0.1 - - [26/Jul/2025 12:18:05] "GET / HTTP/1.1" 200 -]
 [2025-07-26 12:18:07,284: INFO: _internal: 127.0.0.1 - - [26/Jul/2025 12:18:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
 [2025-07-26 12:19:16,786: INFO: _internal: 127.0.0.1 - - [26/Jul/2025 12:19:16] "POST /predict HTTP/1.1" 200 -]
+[2025-07-28 10:34:55,042: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-07-28 10:34:55,074: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-07-28 10:34:55,105: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-07-28 10:34:55,105: INFO: common: created directory at: artifacts]
+[2025-07-28 10:34:55,105: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-07-28 10:34:55,105: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-28 10:34:56,914: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-07-28 10:34:56,915: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\main.py", line 11, in <module>
+    data_ingestion.main()
+  File "c:\users\asus\desktop\kidney-disease-classification-mlflow-dvc\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.extract_zip_file()
+  File "c:\users\asus\desktop\kidney-disease-classification-mlflow-dvc\src\cnnClassifier\components\data_ingestion.py", line 43, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\zipfile.py", line 1240, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2025-07-28 15:50:17,931: WARNING: module_wrapper: From C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+]
+[2025-07-28 16:24:50,334: WARNING: module_wrapper: From C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+]
+[2025-07-28 17:16:00,661: WARNING: module_wrapper: From C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+]
+[2025-07-28 17:21:37,976: WARNING: module_wrapper: From C:\Users\ASUS\Desktop\Kidney-Disease-Classification-MLflow-DVC\venv\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+]
+[2025-07-28 18:24:18,212: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000002C9E5A7DAB0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]

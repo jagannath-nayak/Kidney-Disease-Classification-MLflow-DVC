@@ -1,52 +1,82 @@
-from flask import Flask, request, jsonify, render_template
-import os
-from flask_cors import CORS, cross_origin
-from cnnClassifier.utils.common import decodeImage
-from cnnClassifier.pipeline.prediction import PredictionPipeline
+import streamlit as st
+from features.functions import load_lottie_file
+import streamlit_lottie as st_lottie
 
+st.set_page_config(
+    page_title="Kidney Tumor Classifier",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
+def safe_lottie(path: str):
+    try:
+        return load_lottie_file(path)
+    except Exception:
+        return None
 
-os.putenv('LANG', 'en_US.UTF-8')
-os.putenv('LC_ALL', 'en_US.UTF-8')
-
-app = Flask(__name__)
-CORS(app)
-
-
-class ClientApp:
-    def __init__(self):
-        self.filename = "inputImage.jpg"
-        self.classifier = PredictionPipeline(self.filename)
-
-
-@app.route("/", methods=['GET'])
-@cross_origin()
 def home():
-    return render_template('index.html')
+    st.header("🧠 Kidney Tumor Classifier", divider='rainbow')
+
+    with st.container(border=True):
+        left, right = st.columns(2)
+        with left:
+            st.subheader("About the App", divider='rainbow')
+            st.markdown(
+                """
+This Streamlit app is a deep learning-powered **Kidney Tumor Classification Tool**.
+
+**What you can do here:**
+- 📤 Upload a CT/MRI image
+- 🔍 Get a prediction: **Tumor** or **Normal**
+- 🧠 See **explanations** (Integrated Gradients / Grad‑CAM fallback)
+- 🧾 Download a **Prediction PDF report**
+- ⚖️ Explore a **Bias Dashboard** across demographics
+- 📄 View & download the **Model & Data Card**
+- 🎯 Trained model with **95% accuracy**
+                """
+            )
+        with right:
+            banner = safe_lottie("animations/banner..json")
+            if banner:
+                st_lottie.st_lottie(banner, loop=True, width=500, height=350)
+            else:
+                st.info("Add a Lottie file at `animations/banner.json` to show an animation here.")
+
+    with st.container(border=True):
+        st.subheader("🔭 Visuals used in the app", divider='rainbow')
+        c1, c2 = st.columns(2)
+        with c1:
+            analyze = safe_lottie("animations/analyze.json")
+            if analyze:
+                st_lottie.st_lottie(analyze, loop=True, height=250)
+            else:
+                st.caption("Missing: animations/analyze.json")
+
+            success = safe_lottie("animations/success..json")
+            if success:
+                st_lottie.st_lottie(success, loop=True, height=250)
+            else:
+                st.caption("Missing: animations/success.json")
+
+        with c2:
+            tumor_scan = safe_lottie("animations/tumor_scan.json")
+            if tumor_scan:
+                st_lottie.st_lottie(tumor_scan, loop=True, height=250)
+            else:
+                st.caption("Missing: animations/tumor_scan.json")
 
 
+            if banner:
+                st_lottie.st_lottie(banner, loop=True, height=250)
 
+    st.success("✅ Navigate using the sidebar (left) to try the Predictor, Bias Dashboard, and Model/Data Card.")
 
-@app.route("/train", methods=['GET','POST'])
-@cross_origin()
-def trainRoute():
-    os.system("python main.py")
-    # os.system("dvc repro")
-    return "Training done successfully!"
+pg = st.navigation([
+    st.Page(title="Home", page=home, icon="🏠"),
+    st.Page(title="Kidney Tumor Predictor", page="features/0-Kidney-Tumor-Predictor.py", icon="🧪"),
+    st.Page(title="Bias Dashboard", page="features/1-Bias-Dashboard.py", icon="⚖️"),
+    st.Page(title="Model & Data Card", page="features/2-Model-Data-Card.py", icon="📄"),
+])
 
-
-
-@app.route("/predict", methods=['POST'])
-@cross_origin()
-def predictRoute():
-    image = request.json['image']
-    decodeImage(image, clApp.filename)
-    result = clApp.classifier.predict()
-    return jsonify(result)
-
-
-if __name__ == "__main__":
-    clApp = ClientApp()
-
-    app.run(host='0.0.0.0', port=8080) #for AWS
-
+pg.run()

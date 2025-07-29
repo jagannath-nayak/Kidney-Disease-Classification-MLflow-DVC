@@ -16,4 +16,8 @@ scipy
 Flask
 Flask-Cors
 gdown
+streamlit 
+streamlit-lottie 
+pillow
+fpdf
 #-e .
